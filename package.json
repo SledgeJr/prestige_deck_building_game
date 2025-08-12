@@ -1,0 +1,31 @@
+{
+  "name": "prestige_deck_building_game",
+  "version": "1.0.0",
+  "description": "An original deck building game",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm:start client\" \"npm:start server\"",
+    "start:client": "npm run dev --workspace=client",
+    "start:server": "npm run dev --workspace=server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SledgeJr/prestige_deck_building_game.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SledgeJr/prestige_deck_building_game/issues"
+  },
+  "homepage": "https://github.com/SledgeJr/prestige_deck_building_game#readme",
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.2.1",
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
+    "concurrently": "^9.2.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.2"
+  }
+}
