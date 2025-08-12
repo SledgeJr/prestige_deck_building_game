@@ -1,0 +1,10 @@
+{ 
+    "knight" : {
+        "title": "Knight",
+        "image": "/cards/knight.png"
+    },
+    "gold" : {
+        "title": "Gold",
+        "image": "/cards/gold.png"
+    }
+}

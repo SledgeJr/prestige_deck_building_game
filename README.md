@@ -14,7 +14,7 @@ The ideas for the game are not totally fleshed out, and as such everythin in thi
 The game will either end after "defeating" the opponents (reducing their health or some other "currency") or by acheiving some maximum level yourself (will be decide on more clearly later)
 
 ## Technical Implementation Plan
-1. Build Project Infrastructure (Vite + React + TS)
+1. Build Project Infrastructure (Vite + React + TS) 
 2. Define card schema in JSON
 3. Build basic web UI to show cards in hand/decks etc. 
 4. Step-by-step Implementation of Game Procedures (Draw Hand, End Turn, etc.)
@@ -24,3 +24,17 @@ The game will either end after "defeating" the opponents (reducing their health 
 
 ## Summary
 This project and readme will evolve with time, hopefully into a succesfull and fun game.
+
+## Development Documentation
+### Day One
+#### Started with setting up the basic infrastructure:
+1. React TS Front End served with Vite
+2. node TS Back End
+
+#### Serve files from server
+For step Below
+
+#### Created Basic Cards
+1. Created cards.json file which contains different cards, their titles and images
+2. Created card component which defines a card and card fetcher component which (currently) gets a random card. This is done by fetching the cards.json from the server and randomly choosing a value index and returning a card with those values as its title and image.
+
