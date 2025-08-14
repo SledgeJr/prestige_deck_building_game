@@ -36,5 +36,16 @@ For step Below
 
 #### Created Basic Cards
 1. Created cards.json file which contains different cards, their titles and images
-2. Created card component which defines a card and card fetcher component which (currently) gets a random card. This is done by fetching the cards.json from the server and randomly choosing a value index and returning a card with those values as its title and image.
+2. Created card component which defines a card and card fetcher component which (currently) gets a random card. This is done by randomly choosing an index i and returning the values in cards.json of the i-th key (card) such as its title and image.
+
+### Day Two
+#### Updated Card Design
+1. Have optional overlays on corners of cards for cost and prestige.
+2. Cards have title (required), image (required), ability, description, cost and prestige
+
+#### Updated Card API
+Added optional query param to choose card instead of fetching random card.
+
+#### Started Implementation of CardHand Component to Store and Visualize a Hand of Cards
+Take an array of string as props with each string being a card type. Maps them to CardFetcher components. 
 
