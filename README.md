@@ -26,6 +26,8 @@ The game will either end after "defeating" the opponents (reducing their health 
 This project and readme will evolve with time, hopefully into a succesfull and fun game.
 
 ## Development Documentation
+(Each "day" is generally somewhere between 3 to 6 hours)
+
 ### Day One
 #### Started with setting up the basic infrastructure:
 1. React TS Front End served with Vite
@@ -48,4 +50,13 @@ Added optional query param to choose card instead of fetching random card.
 
 #### Started Implementation of CardHand Component to Store and Visualize a Hand of Cards
 Take an array of string as props with each string being a card type. Maps them to CardFetcher components. 
+
+### Day Three
+#### Started Implementation of Card Drag and Drop
+1. Added mousedown eventHandler to card which sets a isDragged state to true
+2. Added mouse position states to know how to transform card during dragging
+3. Added useEffects to which trigger when mouse position and isDragged change which hand transformation of dragged card
+4. Additional mouseup event listener is added to window to exit drag mode if mouse is released outside of card.
+    a. I handled it this way so if card is dragged quickly, mouse can leave card and not trigger drag end, and still allow trigger of drag end if mouse is released at that time.
+    b. Dealt with styling issues to get card content to scale properly and for cursor to be proper "grab" cursor
 

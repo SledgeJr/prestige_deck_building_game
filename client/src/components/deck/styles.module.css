@@ -1,0 +1,18 @@
+.cardBack {
+    height: 100%;
+    aspect-ratio: 3/5;
+    background: radial-gradient(circle,rgba(199, 137, 137, 1) 0%, rgba(209, 121, 121, 1) 25%, rgba(168, 45, 45, 1) 100%);
+    border: black 5px solid;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    cursor: pointer;
+}
+
+.image {
+    width: 100%;
+    aspect-ratio: 3/5;
+    grid-row: 2/3;
+    grid-column: 2/3;
+}
