@@ -2,7 +2,7 @@ import styles from './styles.module.css'
 import { CardProps } from './types'
 import { useState, useEffect } from 'react'
 
-const Card: React.FC<CardProps> = ({ title, image, description, ability_text, prestige, cost, onClick }) => {
+const Card: React.FC<CardProps> = ({ id, title, image, description, ability_text, prestige, cost, onDragged, isDraggable }) => {
   const [intitalMousePosition, setInitialMousePosition] = useState<{[key: string]: number}>({'x': 0, 'y': 0})
   const [currentMousePosition, setCurrentMousePosition] = useState<{[key: string]: number}>({'x': 0, 'y': 0})
   const [positionOffset, setPositionOffset] = useState<{[key: string]: number}>({'x': 0, 'y': 0})
@@ -41,6 +41,7 @@ const Card: React.FC<CardProps> = ({ title, image, description, ability_text, pr
       }
       catch{}
     }
+
   }, [isDragged])
 
 
@@ -52,11 +53,15 @@ const Card: React.FC<CardProps> = ({ title, image, description, ability_text, pr
   };
 
   function handleDragEnd(e: React.MouseEvent<HTMLDivElement>) {
-    setIsDragged(false);
+    if (isDragged) {
+      setIsDragged(false);
+      onDragged(id, currentMousePosition.x, currentMousePosition.y)
+    }
+    
   };
 
   return (
-      <div onMouseDown={handleDragStart} onMouseUp={handleDragEnd} className={styles.cardFrame} style={{transform: `translate(${positionOffset.x/1.5}px, ${positionOffset.y/1.5}px)`}}>
+      <div onMouseDown={isDraggable ? handleDragStart : () => {return}} onMouseUp={isDraggable ? handleDragEnd : () => {return}} className={styles.cardFrame} style={{transform: `translate(${positionOffset.x/1.5}px, ${positionOffset.y/1.5}px)`}}>
         <div className={styles.card}>
           {prestige && <div className={styles.prestige}>{prestige}</div>}
           {cost && <div className={styles.cost}>{cost}</div>}

@@ -14,36 +14,36 @@ The ideas for the game are not totally fleshed out, and as such everythin in thi
 The game will either end after "defeating" the opponents (reducing their health or some other "currency") or by acheiving some maximum level yourself (will be decide on more clearly later)
 
 ## Technical Implementation Plan
-1. Build Project Infrastructure (Vite + React + TS) 
-2. Define card schema in JSON
+1. Build Project Infrastructure (Vite + React + TS).
+2. Define card schema in JSON.
 3. Build basic web UI to show cards in hand/decks etc. 
-4. Step-by-step Implementation of Game Procedures (Draw Hand, End Turn, etc.)
-5. Implement game connection for multiplayer play using websockets
-6. Render Graphics
-7. Polish and Repeat
+4. Step-by-step Implementation of Game Procedures (Draw Hand, End Turn, etc.).
+5. Implement game connection for multiplayer play using websockets.
+6. Render Graphics.
+7. Polish and Repeat.
 
 ## Summary
 This project and readme will evolve with time, hopefully into a succesfull and fun game.
 
 ## Development Documentation
-(Each "day" is generally somewhere between 3 to 6 hours)
+(Each "day" is generally somewhere between 3 to 6 hours).
 
 ### Day One
 #### Started with setting up the basic infrastructure:
-1. React TS Front End served with Vite
-2. node TS Back End
+1. React TS Front End served with Vite.
+2. node TS Back End.
 
 #### Serve files from server
 For step Below
 
 #### Created Basic Cards
-1. Created cards.json file which contains different cards, their titles and images
+1. Created cards.json file which contains different cards, their titles and images.
 2. Created card component which defines a card and card fetcher component which (currently) gets a random card. This is done by randomly choosing an index i and returning the values in cards.json of the i-th key (card) such as its title and image.
 
 ### Day Two
 #### Updated Card Design
 1. Have optional overlays on corners of cards for cost and prestige.
-2. Cards have title (required), image (required), ability, description, cost and prestige
+2. Cards have title (required), image (required), ability, description, cost and prestige.
 
 #### Updated Card API
 Added optional query param to choose card instead of fetching random card.
@@ -59,4 +59,12 @@ Take an array of string as props with each string being a card type. Maps them t
 4. Additional mouseup event listener is added to window to exit drag mode if mouse is released outside of card.
     a. I handled it this way so if card is dragged quickly, mouse can leave card and not trigger drag end, and still allow trigger of drag end if mouse is released at that time.
     b. Dealt with styling issues to get card content to scale properly and for cursor to be proper "grab" cursor
+
+### Day Four
+#### Added "Play Area" and Relevant States and Functions
+1. Created Play Area Component 
+    a. Simple div that will be used for playing cards
+2. Split cards into cards in hand and cards in play
+3. Added functionality of dropping cards into play area removes card from hand and moves it to play area.
+    a. This was acheived by having the id and mouse position of the card passed up to the parents through a callback function and when released, and then checking if the card was released in the play area.
 

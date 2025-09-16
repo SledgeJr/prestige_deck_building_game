@@ -7,23 +7,29 @@
 
 .hand {
   position:absolute;
-  bottom: 5%;
-  left: 50%;
-  height: 35cqh;
+  bottom: 2%;
+  left: 25%;
+  height: 25cqh;
   width: 100cqw;
-  transform: translateX(-50%);
 }
 
 .deck {
   position:absolute;
   bottom: 50%;
-  left: 50%;
-  height: 35cqh;
+  right: 10%;
+  height: 25cqh;
   aspect-ratio: 3/5;
-  transform: translateX(-50%);
+  transform: translateY(50%);
 }
 
 .card {
   padding: 2em;
 }
 
+.playArea {
+  position: absolute;
+  height: 25%;
+  width: 65%;
+  left: 5%;
+  top: 40%;
+}

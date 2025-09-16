@@ -8,10 +8,11 @@
   height: 100%;
   display: inline-block;
   position: relative;
-  transition: scale 1s;
+  transition: scale 1s, transform 1s;
 }
 
 .cardInHand:hover {
   z-index: 10;
   scale: 1.5;
+  transform: translateY(-20%);
 }

@@ -4,9 +4,9 @@ interface deckProps {
     onClick?: () => void
 }
 
-const Deck: React.FC = () => {
+const Deck: React.FC<deckProps> = ({ onClick }) => {
     return (
-        <div className={styles.cardBack}>
+        <div className={styles.cardBack} onClick={onClick}>
             <img className={styles.image} src={`${SERVER_URL}/cards/p.png`}></img>
         </div>
     )

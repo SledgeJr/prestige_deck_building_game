@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import Card from '../card'
 import { SERVER_URL } from '../../../config';
+import { CardType } from 'components/card/types';
 
 interface Card_interface {
   title: string
@@ -8,11 +9,15 @@ interface Card_interface {
 }
 
 interface CardFetcherProps {
-  cardType?: string // optional string
+  id: string
+  isDraggable: boolean
+  cardType?: CardType // optional string
+  onDragged: (id: string|null, mouseX: number|null, mouseY: number|null) => void
 }
 
-const CardFetcher: React.FC<CardFetcherProps> = ({cardType}) => {
+const CardFetcher: React.FC<CardFetcherProps> = ({id, cardType, isDraggable, onDragged}) => {
   const [card, setCard] = useState<Card_interface | null>(null)
+  
   let params = null
   if (cardType)
   {
@@ -34,7 +39,7 @@ const CardFetcher: React.FC<CardFetcherProps> = ({cardType}) => {
   if (!card) return <p>Loading card...</p>
 
   return (
-    <Card {...card}></Card>
+    <Card id={id} isDraggable={isDraggable} onDragged={onDragged} {...card}></Card>
   )
 }
 
