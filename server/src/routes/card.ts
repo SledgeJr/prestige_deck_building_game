@@ -19,4 +19,11 @@ router.get('/card', (req, res) => {
   res.json(randomCard)
 })
 
+router.get('/cardTypes', (req, res) => {
+  const filePath = path.join(__dirname, '../data/cards.json')
+  const rawData = fs.readFileSync(filePath, 'utf-8')
+  const cards = JSON.parse(rawData)
+  res.json(Object.keys(cards))
+})
+
 export default router

@@ -11,6 +11,7 @@
   left: 25%;
   height: 25cqh;
   width: 100cqw;
+  z-index: 10;
 }
 
 .deck {
@@ -31,5 +32,47 @@
   height: 25%;
   width: 65%;
   left: 5%;
-  top: 40%;
+  border: solid 5px;
+  border-radius: 10px;
+}
+
+#playArea {
+  top: 50%;
+  border-color: cadetblue;
+}
+
+#opponentPlayArea {
+  top: 20%;
+  border-color: rgb(220, 59, 0);
+}
+
+.playerHud {
+  position: fixed;
+  width: 100vw;
+  height: 15vh;
+}
+
+#playerHud {
+  bottom: 1vh;
+  left: 1vw;
+}
+
+#opponentHud {
+  top: 3vh;
+  left: 1vw;
+}
+
+.opponentHand {
+  width: 30vw;
+  height: 20vh;
+  position: fixed;
+  top: 1vh;
+  right: 1vw;
+  margin: 1vw;
+}
+
+.opponentHand .opponentCard {
+  height: 100%;
+  float: right;
+  margin-left: -5vh;
 }

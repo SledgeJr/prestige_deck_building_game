@@ -12,7 +12,7 @@ interface CardFetcherProps {
   id: string
   isDraggable: boolean
   cardType?: CardType // optional string
-  onDragged: (id: string|null, mouseX: number|null, mouseY: number|null) => void
+  onDragged: (id: string|null, mouseX: number, mouseY: number) => void
 }
 
 const CardFetcher: React.FC<CardFetcherProps> = ({id, cardType, isDraggable, onDragged}) => {

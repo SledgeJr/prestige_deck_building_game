@@ -3,9 +3,10 @@ An original deck building game
 
 ## Project Summary
 The goal of this project is to create an original deck-building game called "Prestige"
-The game concept was created by me (Max Feldhamer) and my Friend Doniel Borderick.
+The game concept was created by me (Max Feldhamer) and my Friend Doniel Broderick.
 The development of the game will be done by me.
-The art will (probably) be done by my wife, Danielle Feldhamer.
+The art is currently from pixabay and AI
+In the future the art and design will (probably) done by my wife, Danielle Feldhamer.
 
 ## Basic Game Summary
 The ideas for the game are not totally fleshed out, and as such everythin in this description is subject to change, but as the basic idea the game will consist of deck-building phases and card playing phases. The deck-buiding will be in a "draft" method. Different cards will have different levels which players can only access based on their "prestige". The players will also choose a class to play as which will affect abilities they can use. Prestige levels can go up by aquiring certain cards or completing "quests". There will be global quests which all players can race to complete (possibly allowing multiple completions/for multiple players to complete).
@@ -68,3 +69,23 @@ Take an array of string as props with each string being a card type. Maps them t
 3. Added functionality of dropping cards into play area removes card from hand and moves it to play area.
     a. This was acheived by having the id and mouse position of the card passed up to the parents through a callback function and when released, and then checking if the card was released in the play area.
 
+### Day Four
+#### Fixed small bugs 
+1. Fixed hand limit bug
+2. Fixed rerendering of cards in play area and hand incorrectly
+
+#### Added Player Hud
+1. Created PlayerHud component which takes current stats (health, gold, defense) as props and displays them
+2. Created playerStats state 
+
+#### Implemented Basic Play Effects to Cards 
+1. Added play_effects key to cards in the cards which (currently) holds a dictionary of stats and integer values for how it affects them when played. For example, a card with "'play_effect' : {'gold': 1} increments gold by one when played
+    a. When a card is played, the play_effect data is then fetched from the server to set the state accordingly
+2. More complex play effects will probably need a different implementation which will be dealt with in the future.
+
+#### Added Opponent Components
+1. Used existing components for opponent
+2. Split cards into cards in hand and cards in play
+3. Added functionality of dropping cards into play area removes card from hand and moves it to play area.
+    a. This was acheived by having the id and mouse position of the card passed up to the parents through a callback function and when released, and then checking if the card was released in the play area.
+4. Next step is to add multiplayer server to give real-time functionality to opponent components

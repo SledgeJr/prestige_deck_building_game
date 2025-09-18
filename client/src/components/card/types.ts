@@ -1,4 +1,13 @@
-export const CardTypes = ['gold', 'wench', 'knight']
+import { SERVER_URL } from "../../../config";
+
+export let CardTypes: string[] = []
+
+fetch(SERVER_URL + `/api/cardTypes`)
+  .then(res => res.json())
+  .then(data => {
+    CardTypes = data;
+  })
+  .catch(console.error);
 
 export type CardLocation = "deck" | "hand" | "inPlay";
 
@@ -21,7 +30,7 @@ export interface CardProps {
   description?: string
   ability_text?: string
   prestige?: string
-  cost?: number
-  onDragged: (id: string|null, mouseX: number|null, mouseY: number|null) => void 
+  cost?: number,
+  onDragged: (id: string|null, mouseX: number, mouseY: number) => void 
   onClick?: () => void
 }

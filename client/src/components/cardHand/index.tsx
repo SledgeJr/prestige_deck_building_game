@@ -5,7 +5,7 @@ import { Card } from '../card/types'
 
 interface CardHandProps {
     cards: Card[]
-    onDragged: (id: string|null, mouseX: number|null, mouseY: number|null) => void
+    onDragged: (id: string|null, mouseX: number, mouseY: number) => void
 }
 
 

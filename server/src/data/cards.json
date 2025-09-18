@@ -1,22 +1,25 @@
 { 
     "knight" : {
         "title": "Knight",
-        "image": "/cards/knight.png",
+        "image": "/images/knight.png",
         "description": "A novice knight.",
         "ability_text": "Attack: 1 damage\nDefend: 1 health",
-        "prestige": 1
+        "prestige": 1,
+        "play_effect": {"gold": 0, "defense": 1, "health": 0} 
     },
     "gold" : {
         "title": "Gold",
-        "image": "/cards/gold.png",
+        "image": "/images/gold.png",
         "description": "Shiny...",
-        "ability_text": "Gain 1 gold"
+        "ability_text": "Gain 1 gold",
+        "play_effect": {"gold": 1, "defense": 0, "health": 0} 
     },
     "wench" : {
         "title": "Wench",
-        "image": "/cards/wench.png",
+        "image": "/images/wench.png",
         "description": "A plain ol' wench",
         "ability_text": "Gain 1 health or remove enemy knight",
-        "cost": 1
+        "cost": 1,
+        "play_effect": {"gold": 0, "defense": 0, "health": 1} 
     }
 }

@@ -7,7 +7,7 @@ interface deckProps {
 const Deck: React.FC<deckProps> = ({ onClick }) => {
     return (
         <div className={styles.cardBack} onClick={onClick}>
-            <img className={styles.image} src={`${SERVER_URL}/cards/p.png`}></img>
+            <img className={styles.image} src={`${SERVER_URL}/images/p.png`}></img>
         </div>
     )
 }
